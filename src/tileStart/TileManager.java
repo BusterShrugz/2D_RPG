@@ -54,7 +54,32 @@ public class TileManager {
         }
 
         g2.drawImage(tiles[0].image,0,0,gp.tileSize,gp.tileSize,null);
-        g2.drawImage(tiles[1].image,48,0,gp.tileSize,gp.tileSize,null);
-        g2.drawImage(tiles[2].image,96,0,gp.tileSize,gp.tileSize,null);
+        g2.drawImage(tiles[0].image,48,0,gp.tileSize,gp.tileSize,null);
+        g2.drawImage(tiles[0].image,96,0,gp.tileSize,gp.tileSize,null);
+        g2.drawImage(tiles[0].image,144,0,gp.tileSize,gp.tileSize,null);
+        g2.drawImage(tiles[0].image,192,0,gp.tileSize,gp.tileSize,null);
+        g2.drawImage(tiles[0].image,240,0,gp.tileSize,gp.tileSize,null);
+        g2.drawImage(tiles[2].image,288,0,gp.tileSize,gp.tileSize,null);
+        g2.drawImage(tiles[2].image,336,0,gp.tileSize,gp.tileSize,null);
+        g2.drawImage(tiles[2].image,384,0,gp.tileSize,gp.tileSize,null);
+        g2.drawImage(tiles[2].image,432,0,gp.tileSize,gp.tileSize,null);
+        g2.drawImage(tiles[1].image,480,0,gp.tileSize,gp.tileSize,null);
+        g2.drawImage(tiles[1].image,528,0,gp.tileSize,gp.tileSize,null);
+        g2.drawImage(tiles[1].image,576,0,gp.tileSize,gp.tileSize,null);
+        g2.drawImage(tiles[2].image,0,48,gp.tileSize,gp.tileSize,null);
+        g2.drawImage(tiles[2].image,48,48,gp.tileSize,gp.tileSize,null);
+        g2.drawImage(tiles[2].image,0,96,gp.tileSize,gp.tileSize,null);
+//        g2.drawImage(tiles[1].image,96,96,gp.tileSize,gp.tileSize,null);
+//        g2.drawImage(tiles[1].image,144,0,gp.tileSize,gp.tileSize,null);
+//        g2.drawImage(tiles[1].image,192,0,gp.tileSize,gp.tileSize,null);
+//        g2.drawImage(tiles[1].image,240,0,gp.tileSize,gp.tileSize,null);
+//        g2.drawImage(tiles[1].image,288,0,gp.tileSize,gp.tileSize,null);
+//        g2.drawImage(tiles[1].image,336,0,gp.tileSize,gp.tileSize,null);
+//        g2.drawImage(tiles[1].image,384,0,gp.tileSize,gp.tileSize,null);
+//        g2.drawImage(tiles[1].image,432,0,gp.tileSize,gp.tileSize,null);
+//        g2.drawImage(tiles[1].image,480,0,gp.tileSize,gp.tileSize,null);
+//        g2.drawImage(tiles[1].image,528,0,gp.tileSize,gp.tileSize,null);
+//        g2.drawImage(tiles[1].image,576,0,gp.tileSize,gp.tileSize,null);
+
     }
 }
