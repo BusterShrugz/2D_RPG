@@ -1,0 +1,62 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "a.tsx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "file.lastUsedOpenFilter": "All Files (*)",
+    "fileStates": {
+        "": {
+            "scaleInDock": 1
+        },
+        "SCIFI.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "The Roguelike 1-13-14 Alpha.tsx": {
+            "scaleInDock": 3,
+            "scaleInEditor": 1
+        },
+        "a.tsx": {
+            "scaleInDock": 3,
+            "scaleInEditor": 2
+        },
+        "testOld.tmx": {
+            "scale": 1.5,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 135,
+                "y": 265.33333333333326
+            }
+        }
+    },
+    "last.externalTilesetPath": "M:/JetBrains/Java.projects/2D_RPG/customTiles_16x16",
+    "last.imagePath": "M:/DLs/Tech Dungeon Roguelite - Asset Pack (v7)",
+    "map.height": 36,
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 48,
+    "openFiles": [
+        "a.tsx",
+        "The Roguelike 1-13-14 Alpha.tsx",
+        "SCIFI.tsx"
+    ],
+    "project": "timeLeapOLD_WORLD.tiled-project",
+    "recentFiles": [
+        "SCIFI.tsx",
+        "The Roguelike 1-13-14 Alpha.tsx",
+        "a.tsx",
+        "testOld.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.margin": 5,
+    "tileset.spacing": 5,
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}
