@@ -29,14 +29,14 @@ public class Player extends Entity {
 //---------------------------------------------------------------------------------------
     public void getPlayerImage(){
         try{
-            up1 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/upKnight.png"));
+            up1 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/move_High.png"));
             up2 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/upKnightTwo.png"));
-            down1 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/downKnight.png"));
+            down1 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/move_Low.png"));
             down2 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/downKnightTwo.png"));
-            left1 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/leftKnight.png"));
-            left2 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/leftKnightTwo.png"));
-            right1 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/rightKnight.png"));
-            right2 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/rightKnightTwo.png"));
+            left1 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/move_High_Left.png"));
+            left2 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/move_Low_Left.png"));
+            right1 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/move_High.png"));
+            right2 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/move_Low.png"));
 
         }catch(IOException e){
             e.printStackTrace();
@@ -90,7 +90,7 @@ public class Player extends Entity {
                     image = up1;
                 }
                 if(spriteNum == 2){
-                    image = up2;
+                    image = up1;
                 }
                 break;
             case "down":
@@ -98,7 +98,7 @@ public class Player extends Entity {
                     image = down1;
                 }
                 if(spriteNum == 2){
-                    image = down2;
+                    image = down1;
                 }
                 break;
             case "left":
