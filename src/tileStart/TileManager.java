@@ -4,71 +4,110 @@ import main.GamePanel;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
-import java.io.IOException;
+import java.io.*;
 
-public class TileManager {
+public class TileManager
+{
 
     GamePanel gp;
     Tile[] tiles;
+    int mapTileNum[][];
+
+
 
     public TileManager(GamePanel gp){
 
         this.gp = gp;
         tiles = new Tile[10];
+        mapTileNum = new int[gp.maxScreenCol][gp.maxScreenRow];
+
         getTileImage();
+        loadMap("C:/JetBrains/JAVAprojects/2D_RPG/res/maps/FLOOR_ONE.txt");
+
     }
 
-    public void getTileImage(){
+    public void getTileImage()
+    {
 
-        try {
-            tiles[0] = new Tile();
+        try
+        {
+            tiles[0] = new Tile(); //grass tile
             tiles[0].image = ImageIO.read(getClass().getResourceAsStream("/gameTiles/001.png"));
 
-            tiles[1] = new Tile();
+            tiles[1] = new Tile(); //water tile
             tiles[1].image = ImageIO.read(getClass().getResourceAsStream("/gameTiles/018.png"));
 
-            tiles[2] = new Tile();
+            tiles[2] = new Tile(); //brick tile
             tiles[2].image = ImageIO.read(getClass().getResourceAsStream("/gameTiles/032.png"));
 
-        }catch (IOException e){
+        }catch (IOException e)
+        {
             e.printStackTrace();
         }
     }
-    public void draw(Graphics2D g2){
+    public void loadMap(String fileInputStream)
+    {
+        try
+        {
+            InputStream is = new FileInputStream(fileInputStream);
+            BufferedReader br = new BufferedReader(new InputStreamReader(is));
+
+            int row = 0;
+            while (row < gp.maxScreenRow)
+            {
+                String line = br.readLine();
+                String numbers[] = line.split(" ");
+
+                for (int col = 0; col < gp.maxScreenCol; col++) {
+                    int num = Integer.parseInt(numbers[col]);
+                    mapTileNum[col][row] = num;
+                }
+                row++;
+            }
+            br.close();
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace(); // Always print or log your exceptions
+        }
+    }
+    public void draw(Graphics2D g2) {
 
         int col = 0;
         int row = 0;
         int x = 0;
         int y = 0;
 
-        while(col < gp.maxScreenCol && row < gp.maxScreenRow){
-
-            g2.drawImage(tiles[0].image, x, y,gp.tileSize, gp.tileSize, null);
+        while (col < gp.maxScreenCol && row < gp.maxScreenRow) {
+            int tileNum = mapTileNum[col][row];
+            g2.drawImage(tiles[tileNum].image, x, y, gp.tileSize, gp.tileSize, null);
             col++;
             x += gp.tileSize;
 
-            if(col == gp.maxScreenCol){
-
+            if (col == gp.maxScreenCol) {
+                col = 0;
+                x = 0;
+                row++;
+                y += gp.tileSize;
             }
-
         }
+    }
+}
 
-        g2.drawImage(tiles[0].image,0,0,gp.tileSize,gp.tileSize,null);
-        g2.drawImage(tiles[0].image,48,0,gp.tileSize,gp.tileSize,null);
-        g2.drawImage(tiles[0].image,96,0,gp.tileSize,gp.tileSize,null);
-        g2.drawImage(tiles[0].image,144,0,gp.tileSize,gp.tileSize,null);
-        g2.drawImage(tiles[0].image,192,0,gp.tileSize,gp.tileSize,null);
-        g2.drawImage(tiles[0].image,240,0,gp.tileSize,gp.tileSize,null);
-        g2.drawImage(tiles[2].image,288,0,gp.tileSize,gp.tileSize,null);
-        g2.drawImage(tiles[2].image,336,0,gp.tileSize,gp.tileSize,null);
-        g2.drawImage(tiles[2].image,384,0,gp.tileSize,gp.tileSize,null);
-        g2.drawImage(tiles[2].image,432,0,gp.tileSize,gp.tileSize,null);
-        g2.drawImage(tiles[1].image,480,0,gp.tileSize,gp.tileSize,null);
-        g2.drawImage(tiles[1].image,528,0,gp.tileSize,gp.tileSize,null);
-        g2.drawImage(tiles[1].image,576,0,gp.tileSize,gp.tileSize,null);
-        g2.drawImage(tiles[2].image,0,48,gp.tileSize,gp.tileSize,null);
-        g2.drawImage(tiles[2].image,48,48,gp.tileSize,gp.tileSize,null);
-        g2.drawImage(tiles[2].image,0,96,gp.tileSize,gp.tileSize,null);
+//        g2.drawImage(tiles[0].image,0,0,gp.tileSize,gp.tileSize,null);
+//        g2.drawImage(tiles[0].image,48,0,gp.tileSize,gp.tileSize,null);
+//        g2.drawImage(tiles[0].image,96,0,gp.tileSize,gp.tileSize,null);
+//        g2.drawImage(tiles[0].image,144,0,gp.tileSize,gp.tileSize,null);
+//        g2.drawImage(tiles[0].image,192,0,gp.tileSize,gp.tileSize,null);
+//        g2.drawImage(tiles[0].image,240,0,gp.tileSize,gp.tileSize,null);
+//        g2.drawImage(tiles[0].image,288,0,gp.tileSize,gp.tileSize,null);
+//        g2.drawImage(tiles[0].image,336,0,gp.tileSize,gp.tileSize,null);
+//        g2.drawImage(tiles[0].image,384,0,gp.tileSize,gp.tileSize,null);
+//        g2.drawImage(tiles[0].image,432,0,gp.tileSize,gp.tileSize,null);
+//        g2.drawImage(tiles[0].image,480,0,gp.tileSize,gp.tileSize,null);
+//        g2.drawImage(tiles[0].image,528,0,gp.tileSize,gp.tileSize,null);
+//        g2.drawImage(tiles[0].image,576,0,gp.tileSize,gp.tileSize,null);
+
 //        g2.drawImage(tiles[1].image,96,96,gp.tileSize,gp.tileSize,null);
 //        g2.drawImage(tiles[1].image,144,0,gp.tileSize,gp.tileSize,null);
 //        g2.drawImage(tiles[1].image,192,0,gp.tileSize,gp.tileSize,null);
@@ -80,6 +119,3 @@ public class TileManager {
 //        g2.drawImage(tiles[1].image,480,0,gp.tileSize,gp.tileSize,null);
 //        g2.drawImage(tiles[1].image,528,0,gp.tileSize,gp.tileSize,null);
 //        g2.drawImage(tiles[1].image,576,0,gp.tileSize,gp.tileSize,null);
-
-    }
-}
