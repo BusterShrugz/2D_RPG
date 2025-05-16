@@ -15,14 +15,15 @@ public class TileManager
 
 
 
-    public TileManager(GamePanel gp){
+    public TileManager(GamePanel gp)
+    {
 
         this.gp = gp;
         tiles = new Tile[10];
         mapTileNum = new int[gp.maxScreenCol][gp.maxScreenRow];
 
         getTileImage();
-        loadMap("C:/JetBrains/JAVAprojects/2D_RPG/res/maps/FLOOR_ONE.txt");
+        loadMap("M:\\JetBrains\\Java.projects\\2D_RPG\\2D_RPG\\res\\maps\\FLOOR_ONE.txt");
 
     }
 
@@ -31,14 +32,26 @@ public class TileManager
 
         try
         {
-            tiles[0] = new Tile(); //grass tile
-            tiles[0].image = ImageIO.read(getClass().getResourceAsStream("/gameTiles/001.png"));
+            tiles[0] = new Tile(); //steel floor tile
+            tiles[0].image = ImageIO.read(getClass().getResourceAsStream("/gameTiles/steelFloorOne.png"));
 
-            tiles[1] = new Tile(); //water tile
-            tiles[1].image = ImageIO.read(getClass().getResourceAsStream("/gameTiles/018.png"));
+            tiles[1] = new Tile(); //LAVA tile
+            tiles[1].image = ImageIO.read(getClass().getResourceAsStream("/gameTiles/greenLAVA.png"));
 
-            tiles[2] = new Tile(); //brick tile
-            tiles[2].image = ImageIO.read(getClass().getResourceAsStream("/gameTiles/032.png"));
+            tiles[2] = new Tile(); //top spaceship wall tile
+            tiles[2].image = ImageIO.read(getClass().getResourceAsStream("/gameTiles/topWallOne.png"));
+
+            tiles[3] = new Tile(); //left spaceship wall tile
+            tiles[3].image = ImageIO.read(getClass().getResourceAsStream("/gameTiles/topWallOne.png"));
+
+            tiles[4] = new Tile(); //right spaceship wall tile
+            tiles[4].image = ImageIO.read(getClass().getResourceAsStream("/gameTiles/topWallOne.png"));
+
+            tiles[5] = new Tile(); //right spaceship wall tile
+            tiles[5].image = ImageIO.read(getClass().getResourceAsStream("/gameTiles/topWallOne.png"));
+
+            tiles[6] = new Tile(); //right spaceship wall tile
+            tiles[6].image = ImageIO.read(getClass().getResourceAsStream("/gameTiles/topWallOne.png"));
 
         }catch (IOException e)
         {
