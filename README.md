@@ -40,13 +40,11 @@ In **Time Leap**, players traverse maps that combine medieval and futuristic sci
 
 ## Screenshots
 
+![TL_screenshot](https://github.com/user-attachments/assets/459f1eb3-526c-4b64-af3f-92ed77c693b1)
 
 ---
 
 ## Installation
 
-1. **Clone the repository:**
-
-```bash
-git clone https://github.com/yourusername/TimeLeap.git
-cd TimeLeap
+1. **Clone the repository:**  
+    or fork it, ya know?
