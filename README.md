@@ -1,5 +1,9 @@
 # Time Leap
 
+**Time Leap** is a thrilling 2D RPG that fuses **medieval fantasy** with **futuristic sci-fi**. Step into the boots of a hero who can travel through time via mysterious portals—exploring castles, dungeons, and alien landscapes. Level up your skills, master weapons and armor, and carry your hard-earned gear across eras. Every portal opens a new world, but only the clever and skilled will survive and conquer both the past and the future.  
+
+Are you ready to leap through time?
+
 **Time Leap** is a 2D top-down RPG built in Java using **Swing**. The game blends **medieval and sci-fi themes**, allowing players to explore multiple timelines via portals, battle enemies, and level up their character. Weapons and armor can be carried through time if the player has mastered the related skills.
 
 ---
