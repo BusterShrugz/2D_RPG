@@ -27,7 +27,8 @@ In **Time Leap**, players traverse maps that combine medieval and futuristic sci
 
 ---
 
-## Features
+## Features  
+(so far)  
 
 - **Tile-based world** with multiple maps and time periods.  
 - **Title screen** and smooth game start using `ENTER`.  
@@ -48,3 +49,48 @@ In **Time Leap**, players traverse maps that combine medieval and futuristic sci
 
 1. **Clone the repository:**  
     or fork it, ya know?
+   
+## Controls
+
+- W – Move Up  
+- A – Move Left  
+- S – Move Down  
+- D – Move Right  
+- ENTER – Start the game from the title screen  
+
+## Project Structure 
+**(Thus Far)**  
+
+TimeLeap/
+│  
+├─ src/  
+│   ├─ main/  
+│   │   ├─ Main.java  
+│   │   ├─ GamePanel.java  
+│   │   └─ KeyHandler.java  
+│   ├─ entity/  
+│   │   ├─ Entity.java  
+│   │   └─ Player.java  
+│   └─ tileStart/  
+│       ├─ Tile.java  
+│       └─ TileManager.java  
+│  
+├─ res/  
+│   ├─ maps/  
+│   ├─ gameTiles/  
+│   └─ player/  
+│  
+└─ README.md  
+
+## Future Improvements  
+
+- Add enemies and combat system with time-specific abilities.  
+- Inventory system to manage items across timelines.  
+- Sound effects and music for immersion.  
+- More complex portal mechanics with skill requirements.  
+- Save/load system for game progress.  
+
+## License  
+
+- This project is licensed under the MIT License
+
