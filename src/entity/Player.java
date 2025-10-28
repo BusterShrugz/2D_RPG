@@ -1,12 +1,11 @@
 package entity;
 
-import main.GamePanel;
-import main.KeyHandler;
-
-import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import javax.imageio.ImageIO;
+import main.GamePanel;
+import main.KeyHandler;
 
 //---------------------------------------------------------------------------------------
 public class Player extends Entity {

@@ -1,75 +1,73 @@
 package tileStart;
 
-import main.GamePanel;
-
-import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.*;
+import javax.imageio.ImageIO;
+import main.GamePanel;
 
-public class TileManager
-{
+public class TileManager {
 
     GamePanel gp;
     Tile[] tiles;
     int mapTileNum[][];
 
-
-
-    public TileManager(GamePanel gp)
-    {
+    public TileManager(GamePanel gp) {
 
         this.gp = gp;
         tiles = new Tile[10];
         mapTileNum = new int[gp.maxScreenCol][gp.maxScreenRow];
 
         getTileImage();
-        loadMap("M:\\JetBrains\\Java.projects\\2D_RPG\\2D_RPG\\res\\maps\\FLOOR_ONE.txt");
+        loadMap("maps/FLOOR_ONE.txt");
 
     }
 
-    public void getTileImage()
-    {
+    public void getTileImage() {
 
-        try
-        {
-            tiles[0] = new Tile(); //steel floor tile
-            tiles[0].image = ImageIO.read(getClass().getResourceAsStream("/gameTiles/steelFloorOne.png"));
+        try {
+            tiles[0] = new Tile(); // steel floor tile
+            tiles[0].image = ImageIO
+                    .read(getClass().getClassLoader().getResourceAsStream("gameTiles/steelFloorOne.png"));
 
-            tiles[1] = new Tile(); //LAVA tile
-            tiles[1].image = ImageIO.read(getClass().getResourceAsStream("/gameTiles/greenLAVA.png"));
+            tiles[1] = new Tile(); // LAVA tile
+            tiles[1].image = ImageIO
+                    .read(getClass().getClassLoader().getResourceAsStream("gameTiles/001.png"));
 
-            tiles[2] = new Tile(); //top spaceship wall tile
-            tiles[2].image = ImageIO.read(getClass().getResourceAsStream("/gameTiles/topWallOne.png"));
+            tiles[2] = new Tile(); // top spaceship wall tile
+            tiles[2].image = ImageIO
+                    .read(getClass().getClassLoader().getResourceAsStream("gameTiles/032.png"));
 
-            tiles[3] = new Tile(); //left spaceship wall tile
-            tiles[3].image = ImageIO.read(getClass().getResourceAsStream("/gameTiles/topWallOne.png"));
+            // tiles[3] = new Tile(); //left spaceship wall tile
+            // tiles[3].image =
+            // ImageIO.read(getClass().getResourceAsStream("/gameTiles/topWallOne.png"));
 
-            tiles[4] = new Tile(); //right spaceship wall tile
-            tiles[4].image = ImageIO.read(getClass().getResourceAsStream("/gameTiles/topWallOne.png"));
+            // tiles[4] = new Tile(); //right spaceship wall tile
+            // tiles[4].image =
+            // ImageIO.read(getClass().getResourceAsStream("/gameTiles/topWallOne.png"));
 
-            tiles[5] = new Tile(); //right spaceship wall tile
-            tiles[5].image = ImageIO.read(getClass().getResourceAsStream("/gameTiles/topWallOne.png"));
-
-            tiles[6] = new Tile(); //right spaceship wall tile
-            tiles[6].image = ImageIO.read(getClass().getResourceAsStream("/gameTiles/topWallOne.png"));
-
-        }catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    public void loadMap(String fileInputStream)
-    {
-        try
-        {
-            InputStream is = new FileInputStream(fileInputStream);
+
+    public void loadMap(String mapFileName) {
+        try {
+            // Load map file from classpath instead of using absolute path
+            InputStream is = getClass().getClassLoader().getResourceAsStream("maps/FLOOR_ONE.txt");
+            if (is == null) {
+                System.out.println("Map file not found: " + "maps/FLOOR_ONE.txt");
+                return;
+            }
+
             BufferedReader br = new BufferedReader(new InputStreamReader(is));
 
             int row = 0;
-            while (row < gp.maxScreenRow)
-            {
+            while (row < gp.maxScreenRow) {
                 String line = br.readLine();
-                String numbers[] = line.split(" ");
+                if (line == null)
+                    break;
+
+                String[] numbers = line.split(" ");
 
                 for (int col = 0; col < gp.maxScreenCol; col++) {
                     int num = Integer.parseInt(numbers[col]);
@@ -78,12 +76,12 @@ public class TileManager
                 row++;
             }
             br.close();
-        }
-        catch(Exception e)
-        {
-            e.printStackTrace(); // Always print or log your exceptions
+            System.out.println("✅ Map loaded: " + mapFileName);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
+
     public void draw(Graphics2D g2) {
 
         int col = 0;
@@ -106,29 +104,3 @@ public class TileManager
         }
     }
 }
-
-//        g2.drawImage(tiles[0].image,0,0,gp.tileSize,gp.tileSize,null);
-//        g2.drawImage(tiles[0].image,48,0,gp.tileSize,gp.tileSize,null);
-//        g2.drawImage(tiles[0].image,96,0,gp.tileSize,gp.tileSize,null);
-//        g2.drawImage(tiles[0].image,144,0,gp.tileSize,gp.tileSize,null);
-//        g2.drawImage(tiles[0].image,192,0,gp.tileSize,gp.tileSize,null);
-//        g2.drawImage(tiles[0].image,240,0,gp.tileSize,gp.tileSize,null);
-//        g2.drawImage(tiles[0].image,288,0,gp.tileSize,gp.tileSize,null);
-//        g2.drawImage(tiles[0].image,336,0,gp.tileSize,gp.tileSize,null);
-//        g2.drawImage(tiles[0].image,384,0,gp.tileSize,gp.tileSize,null);
-//        g2.drawImage(tiles[0].image,432,0,gp.tileSize,gp.tileSize,null);
-//        g2.drawImage(tiles[0].image,480,0,gp.tileSize,gp.tileSize,null);
-//        g2.drawImage(tiles[0].image,528,0,gp.tileSize,gp.tileSize,null);
-//        g2.drawImage(tiles[0].image,576,0,gp.tileSize,gp.tileSize,null);
-
-//        g2.drawImage(tiles[1].image,96,96,gp.tileSize,gp.tileSize,null);
-//        g2.drawImage(tiles[1].image,144,0,gp.tileSize,gp.tileSize,null);
-//        g2.drawImage(tiles[1].image,192,0,gp.tileSize,gp.tileSize,null);
-//        g2.drawImage(tiles[1].image,240,0,gp.tileSize,gp.tileSize,null);
-//        g2.drawImage(tiles[1].image,288,0,gp.tileSize,gp.tileSize,null);
-//        g2.drawImage(tiles[1].image,336,0,gp.tileSize,gp.tileSize,null);
-//        g2.drawImage(tiles[1].image,384,0,gp.tileSize,gp.tileSize,null);
-//        g2.drawImage(tiles[1].image,432,0,gp.tileSize,gp.tileSize,null);
-//        g2.drawImage(tiles[1].image,480,0,gp.tileSize,gp.tileSize,null);
-//        g2.drawImage(tiles[1].image,528,0,gp.tileSize,gp.tileSize,null);
-//        g2.drawImage(tiles[1].image,576,0,gp.tileSize,gp.tileSize,null);
