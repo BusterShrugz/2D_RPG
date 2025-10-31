@@ -18,7 +18,7 @@ public class TileManager {
         mapTileNum = new int[gp.maxScreenCol][gp.maxScreenRow];
 
         getTileImage();
-        loadMap("maps/spawnZoneCSVs/FLOOR_ONE.txt");
+        loadMap("maps/FLOOR_ONE.txt");
 
     }
 
@@ -53,9 +53,9 @@ public class TileManager {
     public void loadMap(String mapFileName) {
         try {
             // Load map file from classpath instead of using absolute path
-            InputStream is = getClass().getClassLoader().getResourceAsStream("maps/spawnZoneCSVs/FLOOR_ONE.txt");
+            InputStream is = getClass().getClassLoader().getResourceAsStream("maps/FLOOR_ONE.txt");
             if (is == null) {
-                System.out.println("Map file not found: " + "maps/spawnZoneCSVs/FLOOR_ONE.txt");
+                System.out.println("Map file not found: " + "maps/FLOOR_ONE.txt");
                 return;
             }
 
@@ -76,7 +76,7 @@ public class TileManager {
                 row++;
             }
             br.close();
-            System.out.println("✅ Map loaded: " + mapFileName);
+            System.out.println("Map loaded: " + mapFileName);
         } catch (Exception e) {
             e.printStackTrace();
         }
