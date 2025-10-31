@@ -1,4 +1,8 @@
+### VS Code ###
+.vscode/
+
 ### IntelliJ IDEA ###
+.idea/
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
@@ -8,9 +12,11 @@ out/
 .classpath
 .factorypath
 .project
-.settings
+.settings/
 .springBeans
 .sts4-cache
+
+# ignore build outputs
 bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
@@ -22,8 +28,19 @@ bin/
 /nbdist/
 /.nb-gradle/
 
-### VS Code ###
-.vscode/
+### Java ###
+*.class
+*.log
 
-### Mac OS ###
+### Build tools ###
+target/
+build/
+
+### macOS ###
 .DS_Store
+
+### Windows ###
+Thumbs.db
+
+### Keep resource files tracked ###
+!res/**
