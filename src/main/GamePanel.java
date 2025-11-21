@@ -131,23 +131,22 @@ public class GamePanel extends JPanel implements Runnable {
             g2.drawImage(titleImage, 0, 0, screenWidth, screenHeight, null);
         } else 
         {
-            // fallback color
             g2.setColor(Color.BLACK);
             g2.fillRect(0, 0, screenWidth, screenHeight);
         }
             // Draw title text
         g2.setColor(Color.ORANGE);
-        g2.setFont(new Font("Arial", Font.BOLD, 96));
+        g2.setFont(new Font("Arial", Font.BOLD, 140));
         String gameTitle = "TIME LEAP";
         int x = getCenteredX(g2, gameTitle);
-        int y = screenHeight / 2 - 50;
+        int y = screenHeight / 4;
         g2.drawString(gameTitle, x, y);
 
-        g2.setFont(new Font("Arial", Font.BOLD, 36));
+        g2.setFont(new Font("Arial", Font.BOLD, 25));
         String startButton = "PRESS ENTER TO START";
         x = getCenteredX(g2, startButton);
         y += 100;
-        g2.drawString(startButton, x, y);
+        g2.drawString(startButton, x + 150, y);
     }
 
     private int getCenteredX(Graphics2D g2, String text)
