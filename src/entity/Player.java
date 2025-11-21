@@ -29,14 +29,14 @@ public class Player extends Entity {
 //---------------------------------------------------------------------------------------
     public void getPlayerImage(){
         try{
-            up1 = ImageIO.read(new File("player/move_High.png"));
-            up2 = ImageIO.read(new File("player/upKnightTwo.png"));
-            down1 = ImageIO.read(new File("player/move_Low.png"));
-            down2 = ImageIO.read(new File("player/downKnightTwo.png"));
-            left1 = ImageIO.read(new File("player/move_High_Left.png"));
-            left2 = ImageIO.read(new File("player/move_Low_Left.png"));
-            right1 = ImageIO.read(new File("player/move_High.png"));
-            right2 = ImageIO.read(new File("player/move_Low.png"));
+            up1 = ImageIO.read(new File("res/player/move_High.png"));
+            up2 = ImageIO.read(new File("res/player/upKnightTwo.png"));
+            down1 = ImageIO.read(new File("res/player/move_Low.png"));
+            down2 = ImageIO.read(new File("res/player/downKnightTwo.png"));
+            left1 = ImageIO.read(new File("res/player/move_High_Left.png"));
+            left2 = ImageIO.read(new File("res/player/move_Low_Left.png"));
+            right1 = ImageIO.read(new File("res/player/move_High.png"));
+            right2 = ImageIO.read(new File("res/player/move_Low.png"));
 
         }catch(IOException e){
             e.printStackTrace();
