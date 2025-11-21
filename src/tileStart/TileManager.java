@@ -20,7 +20,7 @@ public class TileManager {
 
         getTileImage();
         //loadMap("res/maps/FLOOR_ONE.txt");
-
+        loadMap();
 
 
     }
@@ -51,7 +51,7 @@ public class TileManager {
         }
     }
 
-    public void loadMap(String mapFileName) {
+    public void loadMap() { 
         try {
             // Load map file from classpath instead of using absolute path
             InputStream is = new FileInputStream("res/maps/FLOOR_ONE.txt");
@@ -82,7 +82,7 @@ public class TileManager {
                 row++;
             }
             br.close();
-            System.out.println("Map loaded: " + mapFileName);
+            //System.out.println("Map loaded: " + mapFileName);
         } catch (FileNotFoundException e) {
             e.getMessage();
         } catch (IOException e) {
