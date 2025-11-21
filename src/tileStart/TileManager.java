@@ -28,6 +28,7 @@ public class TileManager {
     public void getTileImage() {
 
         try {
+
             tiles[0] = new Tile(); // steel floor tile
             tiles[0].image = ImageIO.read(new File("res/gameTiles/steelFloorOne.png"));
 
