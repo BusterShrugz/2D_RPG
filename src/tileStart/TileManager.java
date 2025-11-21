@@ -5,6 +5,7 @@ import java.io.*;
 import javax.imageio.ImageIO;
 import main.GamePanel;
 
+
 public class TileManager {
 
     GamePanel gp;
@@ -18,7 +19,9 @@ public class TileManager {
         mapTileNum = new int[gp.maxScreenCol][gp.maxScreenRow];
 
         getTileImage();
-        loadMap("maps/FLOOR_ONE.txt");
+        //loadMap("res/maps/FLOOR_ONE.txt");
+
+
 
     }
 
@@ -26,16 +29,13 @@ public class TileManager {
 
         try {
             tiles[0] = new Tile(); // steel floor tile
-            tiles[0].image = ImageIO
-                    .read(getClass().getClassLoader().getResourceAsStream("gameTiles/steelFloorOne.png"));
+            tiles[0].image = ImageIO.read(new File("res/gameTiles/steelFloorOne.png"));
 
             tiles[1] = new Tile(); // LAVA tile
-            tiles[1].image = ImageIO
-                    .read(getClass().getClassLoader().getResourceAsStream("gameTiles/001.png"));
+            tiles[1].image = ImageIO.read(new File("res/gameTiles/001.png"));
 
             tiles[2] = new Tile(); // top spaceship wall tile
-            tiles[2].image = ImageIO
-                    .read(getClass().getClassLoader().getResourceAsStream("gameTiles/032.png"));
+            tiles[2].image = ImageIO.read(new File("res/gameTiles/032.png"));
 
             // tiles[3] = new Tile(); //left spaceship wall tile
             // tiles[3].image =
@@ -53,11 +53,16 @@ public class TileManager {
     public void loadMap(String mapFileName) {
         try {
             // Load map file from classpath instead of using absolute path
-            InputStream is = getClass().getClassLoader().getResourceAsStream("maps/FLOOR_ONE.txt");
+            InputStream is = new FileInputStream("res/maps/FLOOR_ONE.txt");
+            
+            /* 
+            //this will never be true, kept for reference
+
             if (is == null) {
-                System.out.println("Map file not found: " + "maps/FLOOR_ONE.txt");
+                System.out.println("Map file not found: " + "res/maps/FLOOR_ONE.txt");
                 return;
             }
+                */
 
             BufferedReader br = new BufferedReader(new InputStreamReader(is));
 
@@ -77,8 +82,10 @@ public class TileManager {
             }
             br.close();
             System.out.println("Map loaded: " + mapFileName);
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.getMessage();
+        } catch (IOException e) {
+            e.getMessage();
         }
     }
 

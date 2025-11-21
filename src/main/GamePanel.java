@@ -7,6 +7,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 import tileStart.TileManager;
+import java.io.File;
 
 
 public class GamePanel extends JPanel implements Runnable {
@@ -50,7 +51,7 @@ public class GamePanel extends JPanel implements Runnable {
         gameState = TITLE_SCREEN;
 
          try {
-        titleImage = ImageIO.read(getClass().getResourceAsStream("/screenAssets/titlescreen.jpg"));
+        titleImage = ImageIO.read(new File("/screenAssets/titlescreen.jpg"));
     } catch (IOException e) {
         e.printStackTrace();
     }
