@@ -3,6 +3,7 @@ package main;
 import entity.Player;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
@@ -50,7 +51,7 @@ public class GamePanel extends JPanel implements Runnable {
         gameState = TITLE_SCREEN;
 
          try {
-        titleImage = ImageIO.read(getClass().getResourceAsStream("/screenAssets/titlescreen.jpg"));
+        titleImage = ImageIO.read(new File("res/screenAssets/titlescreen.jpg"));
     } catch (IOException e) {
         e.printStackTrace();
     }
