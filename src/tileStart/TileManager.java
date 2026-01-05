@@ -1,5 +1,4 @@
 package tileStart;
-
 import java.awt.*;
 import java.io.*;
 import javax.imageio.ImageIO;
@@ -18,7 +17,7 @@ public class TileManager {
         mapTileNum = new int[gp.maxScreenCol][gp.maxScreenRow];
 
         getTileImage();
-        loadMap("maps/FLOOR_ONE.txt");
+        loadMap("/res/maps/FLOOR_ONE.txt");
 
     }
 
@@ -26,16 +25,12 @@ public class TileManager {
 
         try {
             tiles[0] = new Tile(); // steel floor tile
-            tiles[0].image = ImageIO
-                    .read(getClass().getClassLoader().getResourceAsStream("gameTiles/steelFloorOne.png"));
+            tiles[0].image = ImageIO.read(getClass().getResourceAsStream("/res/gameTiles/steelFloorOne.png"));
 
             tiles[1] = new Tile(); // LAVA tile
-            tiles[1].image = ImageIO
-                    .read(getClass().getClassLoader().getResourceAsStream("gameTiles/001.png"));
-
+            tiles[1].image = ImageIO.read(getClass().getResourceAsStream("/res/gameTiles/001.png"));
             tiles[2] = new Tile(); // top spaceship wall tile
-            tiles[2].image = ImageIO
-                    .read(getClass().getClassLoader().getResourceAsStream("gameTiles/032.png"));
+            tiles[2].image = ImageIO.read(getClass().getResourceAsStream("/res/gameTiles/032.png"));
 
             // tiles[3] = new Tile(); //left spaceship wall tile
             // tiles[3].image =
@@ -53,7 +48,7 @@ public class TileManager {
     public void loadMap(String mapFileName) {
         try {
             // Load map file from classpath instead of using absolute path
-            InputStream is = getClass().getClassLoader().getResourceAsStream("maps/FLOOR_ONE.txt");
+            InputStream is = getClass().getResourceAsStream("/res/maps/FLOOR_ONE.txt");
             if (is == null) {
                 System.out.println("Map file not found: " + "maps/FLOOR_ONE.txt");
                 return;

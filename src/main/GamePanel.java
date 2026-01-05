@@ -25,8 +25,6 @@ public class GamePanel extends JPanel implements Runnable {
     //FPS
     int FPS = 60;
 
-    
-
     TileManager tileM = new TileManager(this);
     KeyHandler keyH = new KeyHandler(this);
     Thread gameThread;
@@ -37,7 +35,6 @@ public class GamePanel extends JPanel implements Runnable {
     public final int TITLE_SCREEN = 0;
     public final int PLAY_SCREEN = 1;
     public final int PAUSE_SCREEN = 2;
-    
 
     public GamePanel() 
     {
@@ -50,7 +47,7 @@ public class GamePanel extends JPanel implements Runnable {
         gameState = TITLE_SCREEN;
 
          try {
-        titleImage = ImageIO.read(getClass().getResourceAsStream("/screenAssets/titlescreen.jpg"));
+        titleImage = ImageIO.read(getClass().getResourceAsStream("/res/screenAssets/titlescreen.jpg"));
     } catch (IOException e) {
         e.printStackTrace();
     }
